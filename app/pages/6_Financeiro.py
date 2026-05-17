@@ -71,11 +71,7 @@ def carregar_dados():
     
     return df_receita_entregue
 
-# Carregar dados com loading
-with st.spinner("Carregando dados..."):
-    df_receita_entregue = carregar_dados()
-
-st.success(f"✅ {len(df_receita_entregue):,} registros carregados com sucesso!")
+df_receita_entregue = carregar_dados()
 
 # ============================================================================
 # MÉTRICAS PRINCIPAIS (KPIs)
