@@ -1,6 +1,3 @@
 app/exemplos_graficos_financeiros.py
 .env
 exemplos_graficos_financeiros.py
-data/cleaned/pessoa_6/order_items_clean.csv
-data/cleaned/pessoa_6/orders_clean.csv
-data/cleaned/pessoa_6/payments_clean.csv
