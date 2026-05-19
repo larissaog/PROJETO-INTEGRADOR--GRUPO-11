@@ -1,12 +1,13 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+import pandas as pd
 
 st.title("📦 Métricas Logísticas e Prazos de Entrega")
 
 # Leitura dos dados
-orders = pd.read_csv('dados/olist_orders_dataset.csv')
-customers = pd.read_csv('dados/olist_customers_dataset.csv')
-reviews = pd.read_csv('dados/olist_order_reviews_dataset.csv')
+orders = pd.read_csv('data/raw/olist_orders_dataset.csv')
+customers = pd.read_csv('data/raw/olist_customers_dataset.csv')
+reviews = pd.read_csv('data/raw/olist_order_reviews_dataset.csv')
 
 # Conversão de datas
 orders['order_purchase_timestamp'] = pd.to_datetime(orders['order_purchase_timestamp'])
