@@ -6,7 +6,6 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
-from pathlib import Path
 
 # ============================================================================
 # CONFIGURAÇÃO DA PÁGINA
@@ -35,10 +34,7 @@ st.markdown("---")
 # ============================================================================
 
 # Encontrar a raiz do projeto
-BASE_PATH = Path(__file__).parent.parent.parent
-CLEANED_DATA_PATH = BASE_PATH / "data" / "cleaned" / "pessoa_6"
-
-# Importante deixar os nomes dos caminhos aqui, pra caso em algum momento os dados mudem.
+CLEANED_DATA_PATH = "data/cleaned/pessoa_6"
 
 # ============================================================================
 # CARREGAR E PROCESSAR DADOS
@@ -49,8 +45,8 @@ CLEANED_DATA_PATH = BASE_PATH / "data" / "cleaned" / "pessoa_6"
 def carregar_dados():
 
     # Carregar CSVs
-    df_payments = pd.read_csv(CLEANED_DATA_PATH / "payments_clean.csv")
-    df_orders = pd.read_csv(CLEANED_DATA_PATH / "orders_clean.csv")
+    df_payments = pd.read_csv(f"{CLEANED_DATA_PATH}/payments_clean.csv")
+    df_orders = pd.read_csv(f"{CLEANED_DATA_PATH}/orders_clean.csv")
     
     # Reconverter datas
     df_orders['order_purchase_timestamp'] = pd.to_datetime(df_orders['order_purchase_timestamp'])
